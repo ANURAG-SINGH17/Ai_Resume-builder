@@ -9,9 +9,15 @@ const path = require('path');
 const usersRouter = require('./routes/user.routes')
 const aiRouter = require('./routes/ai.routes')
 
-app.use(cors({
-    origin: 'https://ai-resume-builder-eqgf02580-anurag-singh-coders-projects.vercel.app/',
-  }));
+
+// Allow only your frontend's URL
+const corsOptions = {
+    origin: 'https://ai-resume-builder-eqgf02580-anurag-singh-coders-projects.vercel.app',
+    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Methods you want to allow
+    credentials: true, // Allow credentials (optional, based on your requirements)
+  };
+  
+  app.use(cors(corsOptions));
 app.use(express.json());
 app.use(cookiesParser());
 app.use(express.urlencoded({extended:true}));
