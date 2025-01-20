@@ -12,10 +12,10 @@ const aiRouter = require('./routes/ai.routes')
 
 // Allow only your frontend's URL
 const corsOptions = {
-    origin: 'https://ai-resume-builder-eqgf02580-anurag-singh-coders-projects.vercel.app',
-    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Methods you want to allow
-    credentials: true, // Allow credentials (optional, based on your requirements)
-  };
+  origin: 'https://ai-resume-builder-one-xi.vercel.app', // Allow only this origin
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+};
   
   app.use(cors(corsOptions));
 app.use(express.json());
